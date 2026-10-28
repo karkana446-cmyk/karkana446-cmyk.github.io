@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kotak Alat — alat gratis</title>
+<meta name="description" content="Kumpulan alat online gratis: kalkulator, konversi, QR, kompres gambar, kesehatan, teks, dan banyak lagi.">
+<style>
+:root{--bg:#f4f1ec;--card:#fffdf9;--tx:#3d4a47;--mu:#7b8784;--ac:#6f8f86;--ac2:#e3ebe7;--bd:#e4e0d8}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1f2523;--card:#283130;--tx:#e2e8e5;--mu:#98a6a2;--ac:#8fb3a8;--ac2:#33403d;--bd:#38443f}}
+:root[data-theme=dark]{--bg:#1f2523;--card:#283130;--tx:#e2e8e5;--mu:#98a6a2;--ac:#8fb3a8;--ac2:#33403d;--bd:#38443f}
+*{box-sizing:border-box}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+.hero{background:linear-gradient(160deg,color-mix(in srgb,var(--ac) 22%,var(--bg)),var(--bg));padding:26px 18px 18px;border-bottom:1px solid var(--bd)}
+.w{max-width:1000px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center}
+h1{margin:0;font-size:26px}.mu{color:var(--mu);margin:4px 0 14px}
+.th{border:1px solid var(--bd);background:var(--card);border-radius:50%;width:40px;height:40px;cursor:pointer;font-size:18px}
+input,select,textarea{width:100%;padding:12px 14px;margin:0 0 10px;border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx);font:inherit}
+textarea{min-height:90px}label{display:block;font-size:14px;color:var(--mu);margin:0 0 3px 4px}
+#q{margin:0;font-size:17px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:14px 0 4px;scrollbar-width:none}
+.chip{flex:none;padding:8px 15px;border:1px solid var(--bd);border-radius:99px;background:var(--card);color:var(--tx);font:inherit;font-size:14px;cursor:pointer}
+.chip.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:13px;padding:18px 18px 50px;max-width:1000px;margin:auto}
+.card{position:relative;display:flex;flex-direction:column;gap:2px;padding:16px;border:1px solid var(--bd);border-radius:18px;background:var(--card);cursor:pointer;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 8px 20px -12px var(--c)}
+.ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:24px;margin-bottom:8px;background:color-mix(in srgb,var(--c) 22%,transparent)}
+.card small{color:var(--mu);line-height:1.3}
+.st{position:absolute;top:10px;right:10px;border:0;background:none;color:var(--c);font-size:19px;cursor:pointer}
+dialog{border:0;border-radius:22px;width:calc(100% - 28px);max-width:480px;background:var(--card);color:var(--tx);padding:20px}
+dialog::backdrop{background:#0007}.dh{display:flex;justify-content:space-between;align-items:center}h2{margin:0;font-size:21px}
+.x{border:0;background:var(--ac2);color:var(--tx);border-radius:50%;width:34px;height:34px;cursor:pointer}
+.pr,.cp{padding:11px 20px;border:0;border-radius:12px;font:inherit;cursor:pointer}.pr{background:var(--ac);color:#fff}.cp{background:var(--ac2);color:var(--tx)}
+.out{margin:14px 0 10px;padding:14px;min-height:50px;background:var(--ac2);border-radius:14px;white-space:pre-wrap;word-break:break-all}
+.out a{color:var(--ac)}footer{text-align:center;color:var(--mu);font-size:14px;padding:0 0 30px}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:radial-gradient(900px 500px at 8% -8%,color-mix(in srgb,var(--ac) 22%,transparent),transparent),radial-gradient(700px 480px at 100% 0,color-mix(in srgb,#b98f9a 16%,transparent),transparent),var(--bg);background-attachment:fixed}
+.hero{background:none;border:0;padding:36px 18px 6px}
+h1{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.03em;background:linear-gradient(120deg,var(--tx),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .mu{font-size:17px}
+#q{padding:16px 20px;border-radius:20px;background:color-mix(in srgb,var(--card) 78%,transparent);backdrop-filter:blur(12px);box-shadow:0 14px 34px -22px #0007}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 22%,transparent)}
+.chip{box-shadow:0 3px 10px -6px #0004;transition:.2s}.chip:hover{transform:translateY(-2px)}
+.chip.on{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 55%,#7d93a8))}
+.card{border-radius:24px;padding:18px;background:linear-gradient(160deg,var(--card),color-mix(in srgb,var(--c) 9%,var(--card)));box-shadow:0 1px 0 #fff7 inset,0 12px 26px -22px #000a;animation:up .5s both}
+.card:nth-child(3n+2){animation-delay:.07s}.card:nth-child(3n){animation-delay:.14s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 36px -18px var(--c)}
+.card b{font-size:16px;font-weight:600}
+.ic{width:52px;height:52px;border-radius:17px;background:linear-gradient(145deg,color-mix(in srgb,var(--c) 40%,transparent),color-mix(in srgb,var(--c) 10%,transparent));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--c) 32%,transparent)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}}
+dialog{border-radius:30px;border:1px solid var(--bd);box-shadow:0 34px 90px -24px #000b;animation:pop .25s}
+dialog::backdrop{backdrop-filter:blur(7px);background:#0006}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}}
+.pr{background:linear-gradient(135deg,var(--ac),color-mix(in srgb,var(--ac) 55%,#7d93a8));box-shadow:0 10px 20px -10px var(--ac);transition:.15s}.pr:active{transform:scale(.97)}
+.out{border:1px solid var(--bd)}.out.g{white-space:normal;word-break:normal;background:none;border:0;padding:0;margin:8px 0}
+footer{padding:6px 18px 44px}
+.gb{padding:10px 16px;border:0;border-radius:13px;background:var(--ac2);color:var(--tx);font:inherit;cursor:pointer;transition:.15s}.gb:hover{background:var(--ac);color:#fff}
+.gg{display:grid;gap:8px;justify-content:center;margin:12px 0}
+.gc{aspect-ratio:1;min-width:0;border:0;border-radius:16px;background:var(--ac2);color:var(--tx);font-size:26px;cursor:pointer;display:grid;place-items:center;transition:.15s}.gc:hover{filter:brightness(1.07)}.gc:disabled{opacity:.5;cursor:default}
+.gm{text-align:center;color:var(--mu);margin:8px 0;min-height:24px}
+</style></head><body>
+<div class="hero"><div class="w"><div class="top"><h1>🌿 Kotak Alat</h1><button class="th" onclick="th()" title="Ganti tema">🌓</button></div>
+<p class="mu" id="sub"></p><input id="q" placeholder="🔍 Cari alat..." oninput="draw()"><div class="chips" id="ch"></div></div></div>
+<div class="grid" id="g"></div><footer>Gratis untuk semua orang. Data diproses di perangkatmu, tidak dikirim ke mana pun. ✨</footer>
+<dialog id="dlg"><div class="dh"><h2 id="dh"></h2><button class="x" onclick="$('dlg').close()">✕</button></div><p class="mu" id="dd"></p>
+<div id="fm"></div><button class="pr" id="go" onclick="run()">Hitung</button><div class="out" id="out"></div><button class="cp" id="cp" onclick="navigator.clipboard.writeText($('out').textContent)">Salin hasil</button></dialog>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const $=i=>document.getElementById(i),nf=n=>(+n).toLocaleString('id-ID',{maximumFractionDigits:2}),R=n=>crypto.getRandomValues(new Uint32Array(1))[0]%n,ln=s=>s.split('\n').map(x=>x.trim()).filter(Boolean);
+const fd=d=>d.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'UTC'});
+const U=[x=>x*.621371,x=>x*1.609344,x=>x*2.20462,x=>x/2.20462,x=>x*9/5+32,x=>(x-32)*5/9,x=>x*3.28084,x=>x/2.54,x=>x*.264172];
+const CAT=[['Hitung','🧮','#7f9f93'],['Kesehatan','🌿','#8fae8b'],['Waktu','📅','#7d93a8'],['Teks','📝','#b8a58a'],['Developer','💻','#9a8fb0'],['Acak','🎲','#b88f84'],['Media','🖼️','#7fa3a8']];
+let ti=0,sw=0,st=0,cur=0,fc='all',fav=[];try{fav=JSON.parse(localStorage.fav||'[]')}catch{}
+const T=[
+[0,'🧮','Kalkulator','Hitung ekspresi matematika','t:Ekspresi, contoh (12+8)*3/4',x=>nf(Function('return('+x.replace(/[^0-9+\-*\/().% ]/g,'')+')')())],
+[0,'➗','Persen','x% dari sebuah angka','n:Persen (%)|n:Dari angka',(a,b)=>`${a}% dari ${nf(b)} = ${nf(a/100*b)}`],
+[0,'🏷️','Diskon','Harga setelah diskon','n:Harga (Rp)|n:Diskon (%)',(p,d)=>`Bayar Rp${nf(p*(1-d/100))}\nHemat Rp${nf(p*d/100)}`],
+[0,'💳','Cicilan','Estimasi bunga flat','n:Pokok (Rp)|n:Bunga per tahun (%)|n:Lama (bulan)',(p,b,m)=>`Cicilan ±Rp${nf(p*(1+b/100*m/12)/m)} per bulan\nTotal bayar Rp${nf(p*(1+b/100*m/12))}`],
+[0,'🍽️','Patungan','Bagi tagihan plus tip','n:Total tagihan (Rp)|n:Jumlah orang|n:Tip (%), boleh 0',(t,n,p)=>`Per orang Rp${nf(t*(1+p/100)/n)}`],
+[0,'📊','Statistik Angka','Total, rata-rata, min, maks','a:Angka (pisah spasi, koma, atau baris)',x=>{const n=x.split(/[\s,;]+/).filter(Boolean).map(Number).filter(isFinite),s=n.reduce((a,b)=>a+b,0);return `Data: ${n.length}\nTotal: ${nf(s)}\nRata-rata: ${nf(s/n.length)}\nMin: ${nf(Math.min(...n))}\nMaks: ${nf(Math.max(...n))}`}],
+[0,'📏','Konversi Satuan','Panjang, berat, suhu, volume','n:Nilai|s:Konversi:km → mil,mil → km,kg → pon,pon → kg,°C → °F,°F → °C,m → kaki,cm → inci,liter → galon',(v,k)=>nf(U[k](+v))],
+[1,'⚖️','BMI','Indeks massa tubuh','n:Tinggi (cm)|n:Berat (kg)',(t,b)=>{const x=b/(t/100)**2;return nf(x)+' — '+(x<18.5?'Kurus':x<25?'Normal':x<30?'Gemuk':'Obesitas')}],
+[1,'🔥','Kebutuhan Kalori','Perkiraan kalori harian','n:Berat (kg)|n:Tinggi (cm)|n:Umur|s:Jenis kelamin:Laki-laki,Perempuan',(w,h,a,g)=>{const b=10*w+6.25*h-5*a+(g==0?5:-161);return `BMR ${nf(b)} kkal/hari\nAktivitas ringan ±${nf(b*1.375)} kkal/hari`}],
+[1,'💧','Kebutuhan Air','Perkiraan minum per hari','n:Berat (kg)',w=>nf(w*35/1000)+' liter per hari (perkiraan umum)'],
+[2,'🎂','Hitung Umur','Dari tanggal lahir','d:Tanggal lahir',a=>{const d=new Date(a),n=new Date();let y=n.getFullYear()-d.getFullYear(),m=n.getMonth()-d.getMonth(),t=n.getDate()-d.getDate();if(t<0){m--;t+=new Date(n.getFullYear(),n.getMonth(),0).getDate()}if(m<0){y--;m+=12}return `${y} tahun ${m} bulan ${t} hari`}],
+[2,'📅','Selisih Tanggal','Jumlah hari antar dua tanggal','d:Dari|d:Sampai',(a,b)=>Math.round((new Date(b)-new Date(a))/864e5)+' hari'],
+[2,'➕','Tambah Hari','Geser tanggal maju atau mundur','d:Tanggal awal|n:Tambah hari (boleh negatif)',(a,n)=>fd(new Date(+new Date(a)+n*864e5))],
+[2,'🗓️','Cek Hari','Hari apa tanggal itu','d:Tanggal',a=>fd(new Date(a))],
+[2,'🌍','Jam Dunia','Waktu di berbagai kota','',()=>[['Jakarta','Asia/Jakarta'],['Makassar','Asia/Makassar'],['Jayapura','Asia/Jayapura'],['Mekkah','Asia/Riyadh'],['London','Europe/London'],['New York','America/New_York'],['Tokyo','Asia/Tokyo'],['Sydney','Australia/Sydney']].map(([n,z])=>n+': '+new Date().toLocaleTimeString('id-ID',{timeZone:z,hour:'2-digit',minute:'2-digit'})).join('\n'),'Lihat'],
+[2,'⏱️','Stopwatch','Mulai dan jeda','',()=>{if(ti){clearInterval(ti);ti=0;sw+=Date.now()-st;return}st=Date.now();ti=setInterval(()=>$('out').textContent=((sw+Date.now()-st)/1e3).toFixed(1)+' dtk',100)},'Mulai / Jeda'],
+[2,'⏳','Timer','Hitung mundur','n:Menit',m=>{clearInterval(ti);const e=Date.now()+m*6e4;ti=setInterval(()=>{const s=Math.round((e-Date.now())/1e3);$('out').textContent=s>0?Math.floor(s/60)+':'+String(s%60).padStart(2,'0'):'Waktu habis ⏰';if(s<=0){clearInterval(ti);ti=0}},250)},'Mulai'],
+[3,'📝','Hitung Kata','Kata, karakter, kalimat','a:Teks',x=>{const t=x.trim();return `Kata: ${t?t.split(/\s+/).length:0}\nKarakter: ${x.length}\nKalimat: ${(t.match(/[.!?]+/g)||[]).length}`}],
+[3,'🔠','Ubah Huruf','Besar, kecil, judul','a:Teks|s:Gaya:HURUF BESAR,huruf kecil,Huruf Judul',(x,k)=>k==0?x.toUpperCase():k==1?x.toLowerCase():x.toLowerCase().replace(/(^|\s)\S/g,c=>c.toUpperCase())],
+[3,'🧹','Rapikan Teks','Hapus spasi dan baris berlebih','a:Teks',x=>x.replace(/[ \t]+/g,' ').replace(/\n{3,}/g,'\n\n').trim()],
+[3,'🔗','Pembuat Slug','Judul jadi alamat URL','t:Judul',x=>x.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')],
+[3,'📃','Lorem Ipsum','Teks contoh','n:Jumlah paragraf',n=>Array(Math.min(+n||3,20)).fill('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.').join('\n\n')],
+[3,'🧺','Hapus Duplikat','Rapikan dan urutkan daftar','a:Daftar, satu per baris|s:Urutan:A-Z,Z-A,Tanpa urut',(x,k)=>{const l=[...new Set(ln(x))];if(k==0)l.sort((a,b)=>a.localeCompare(b));if(k==1)l.sort((a,b)=>b.localeCompare(a));return l.join('\n')}],
+[4,'🧾','Format JSON','Rapikan data JSON','a:JSON',x=>JSON.stringify(JSON.parse(x),null,2)],
+[4,'🔁','Base64','Encode dan decode','a:Teks|s:Mode:Encode,Decode',(x,k)=>k==0?btoa(unescape(encodeURIComponent(x))):decodeURIComponent(escape(atob(x)))],
+[4,'🌐','URL Encode','Encode dan decode URL','a:Teks|s:Mode:Encode,Decode',(x,k)=>k==0?encodeURIComponent(x):decodeURIComponent(x)],
+[4,'#️⃣','Hash SHA-256','Sidik jari sebuah teks','a:Teks',async x=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(x)))].map(b=>b.toString(16).padStart(2,'0')).join('')],
+[4,'🆔','UUID','ID unik acak','',()=>crypto.randomUUID(),'Buat'],
+[4,'🎨','Kode Warna','HEX, RGB, HSL','c:Pilih warna',h=>{const[r,g,b]=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255),M=Math.max(r,g,b),m=Math.min(r,g,b),d=M-m,l=(M+m)/2,s=d?d/(1-Math.abs(2*l-1)):0,H=!d?0:M==r?((g-b)/d+6)%6:M==g?(b-r)/d+2:(r-g)/d+4;return `${h.toUpperCase()}\nrgb(${[r,g,b].map(x=>Math.round(x*255)).join(', ')})\nhsl(${Math.round(H*60)}, ${Math.round(s*100)}%, ${Math.round(l*100)}%)`}],
+[4,'🔐','Pembuat Sandi','Password acak yang kuat','n:Panjang (default 14)|s:Isi:Lengkap dengan simbol,Huruf dan angka',(n,k)=>{const s='abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789'+(k==0?'!@#$%&*':'');return Array.from({length:Math.min(+n||14,64)},()=>s[R(s.length)]).join('')},'Buat sandi'],
+[4,'💬','Link WhatsApp','Chat tanpa simpan nomor','t:Nomor (08xxx atau 62xxx)|a:Pesan, opsional',(n,p)=>`https://wa.me/${n.replace(/\D/g,'').replace(/^0/,'62')}?text=${encodeURIComponent(p)}`,'Buat link'],
+[5,'🎯','Undi Nama','Pilih satu secara acak','a:Satu nama per baris',x=>{const l=ln(x);return l.length?'🎉 '+l[R(l.length)]:'Isi daftar dulu'},'Undi'],
+[5,'🎲','Dadu dan Koin','Lempar secara acak','s:Pilih:Dadu,Koin,Dua dadu',k=>k==0?'🎲 '+(R(6)+1):k==1?'🪙 '+(R(2)?'Angka':'Gambar'):'🎲 '+(R(6)+1)+' dan '+(R(6)+1),'Lempar'],
+[5,'🔢','Angka Acak','Antara dua angka','n:Minimum|n:Maksimum',(a,b)=>+a+R(b-a+1),'Acak'],
+[6,'🔳','Pembuat QR','Teks atau link jadi kode QR','t:Teks atau link',x=>{const d=document.createElement('div');new QRCode(d,{text:x,width:220,height:220});return d},'Buat QR'],
+[6,'🗜️','Kompres Gambar','Diproses di perangkatmu','f:Gambar|n:Lebar maks (px), opsional|n:Kualitas 10-100 (default 75)',async(f,w,q)=>{const im=await createImageBitmap(f),k=w&&im.width>w?w/im.width:1,c=document.createElement('canvas'),x=c.getContext('2d');c.width=im.width*k;c.height=im.height*k;x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);const bl=await new Promise(r=>c.toBlob(r,'image/jpeg',(q||75)/100)),a=document.createElement('a');a.href=URL.createObjectURL(bl);a.download='hasil.jpg';a.textContent=`Unduh hasil (${nf(bl.size/1024)} KB, asli ${nf(f.size/1024)} KB)`;return a},'Kompres']
+];
+const fld=(s,i)=>{const[t,l,x]=s.split(':'),id='f'+i;return `<label for=${id}>${l}</label>`+(t=='a'?`<textarea id=${id}></textarea>`:t=='s'?`<select id=${id}>${x.split(',').map((e,j)=>`<option value=${j}>${e}</option>`).join('')}</select>`:`<input id=${id} type=${{n:'number',t:'text',d:'date',c:'color',f:'file'}[t]} ${t=='n'?'step=any':''}>`)};
+const FF=t=>t[4]?t[4].split('|'):[];
+function draw(){const q=$('q').value.toLowerCase();$('ch').innerHTML=[['all','✨ Semua'],['fav','⭐ Favorit'],...CAT.map((c,i)=>[i,c[1]+' '+c[0]])].map(([k,l])=>`<button class="chip${fc===k?' on':''}" onclick="fc=${typeof k=='number'?k:`'${k}'`};draw()">${l}</button>`).join('');
+$('g').innerHTML=T.map((t,i)=>[t,i]).filter(([t,i])=>(fc=='all'||(fc=='fav'?fav.includes(i):t[0]===fc))&&(t[2]+' '+t[3]).toLowerCase().includes(q)).map(([t,i])=>`<div class="card" style="--c:${CAT[t[0]][2]}" onclick="show(${i})"><div class="ic">${t[1]}</div><b>${t[2]}</b><small>${t[3]}</small><button class="st" onclick="event.stopPropagation();tg(${i})">${fav.includes(i)?'★':'☆'}</button></div>`).join('')||'<p class="mu">Tidak ada alat yang cocok.</p>'}
+function tg(i){fav=fav.includes(i)?fav.filter(x=>x!=i):[...fav,i];try{localStorage.fav=JSON.stringify(fav)}catch{}draw()}
+function show(i){cur=i;clearInterval(ti);ti=0;sw=0;const t=T[i];$('dh').textContent=t[1]+' '+t[2];$('dd').textContent=t[3];$('fm').innerHTML=FF(t).map(fld).join('');$('go').textContent=t[6]||'Hitung';$('go').hidden=$('cp').hidden=!!t[7];$('out').className='out'+(t[7]?' g':'');$('out').replaceChildren();$('dlg').showModal();history.replaceState(null,'','#alat'+i);if(t[7])run()}
+async function run(){const t=T[cur],o=$('out');try{const r=await t[5](...FF(t).map((_,i)=>{const e=$('f'+i);return e.type=='file'?e.files[0]:e.value}));if(r!==undefined){o.replaceChildren();r instanceof Node?o.append(r):o.textContent=r}}catch{o.textContent='Input tidak valid, coba periksa lagi'}}
+$('dlg').onclose=()=>{window.gk=null;clearInterval(ti);ti=0;history.replaceState(null,'',location.pathname)};
+$('dlg').onkeydown=e=>{if(window.gk)gk(e);if(e.key=='Enter'&&e.target.tagName=='INPUT'&&!T[cur][7])run()};
+function th(){const r=document.documentElement,d=r.dataset.theme?r.dataset.theme=='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.dataset.theme=d?'light':'dark'}
+$('sub').textContent=T.length+' alat gratis untuk kebutuhan sehari-hari. Tanpa daftar, langsung pakai.';
+document.title='Kotak Alat — '+T.length+' alat gratis';
+draw();const m=location.hash.match(/alat(\d+)/);if(m&&T[+m[1]])show(+m[1]);
+</script><script src="games.js" defer></script></body></html>
